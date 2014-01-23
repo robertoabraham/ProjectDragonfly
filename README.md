@@ -1,26 +1,16 @@
-Project Dragonfly. 
+Software to control the Dragonfly Telephoto Array
+(c) 2014 R. Abraham and P. van Dokkum
 
-Copyright (c) 2014, Roberto G Abraham & Pieter van Dokkum
-All rights reserved.
+We strongly recommend that before you try to use this software for anything
+non-trivial you contact either Bob Abraham or Pieter van Dokkum for an
+explanation of how stuff works, lest you go insane. Also, do check out the
+Abraham & van Dokkum 2014 PASP paper which provides some background.  You will
+find that documentation for the Dragonfly software is pretty sparse, but all of
+the really important scripts have quite comprehensive on-line help (for the
+perl scripts use the --man or --help options to see this).  
 
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met: 
-
-1. Redistributions of source code must retain the above copyright notice, this
-   list of conditions and the following disclaimer. 
-   
-2. Redistributions in binary form must reproduce the above copyright notice,
-   this list of conditions and the following disclaimer in the documentation
-   and/or other materials provided with the distribution. 
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
-ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
+Certain bits of the code in this repo have been "sanitized" to remove
+hard-coded static IP addresses.  These will be obvious in the code since IP
+addresses have been replaced by a series of "X" characters, e.g.
+XXX.XXX.XXX.XXX. You will need to replace these with the static IP addresses of
+the various things on your network.
