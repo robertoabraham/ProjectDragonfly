@@ -1,7 +1,7 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 
-#include <SBIGUDrv/sbigudrv.h>
+#include <sbigudrv.h>
 
 #define MAX_SUB_EXPR_CNT 256
 #define MAX_SUB_EXPR_LEN 256

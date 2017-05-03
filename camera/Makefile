@@ -1,15 +1,7 @@
-CC = clang
+CC = gcc 
 CFLAGS = -std=c99 -g
-FFLAGS = -framework SBIGUDrv 
-
-MANAGER?=homebrew
-ifeq ($(MANAGER),homebrew)
-	LFLAGS = -L /usr/local/lib -l cfitsio
-	INCDIR = /usr/local/include
-else
-	LFLAGS = -L /opt/local/lib -l cfitsio
-	INCDIR = /opt/local/include
-endif
+LFLAGS = -L /usr/lib -l sbigudrv -L /lib/x86_64-linux-gnu -l cfitsio
+INCDIR = /usr/include
 
 DEPS = camera.h
 OBJ = expose.o regulate.o status.o camera.o setfilter.o usbcheck.o camera_server
@@ -21,22 +13,22 @@ PROGRAMS = expose regulate status setfilter usbcheck camera_server
 all: expose regulate status setfilter camera_server
 
 camera_server: camera_server.o camera.o
-	$(CC) -o $@ $^ $(FFLAGS) ${LFLAGS}
+	$(CC) -o $@ $^ ${LFLAGS}
 
 expose: expose.o camera.o
-	$(CC) -o $@ $^ $(FFLAGS) ${LFLAGS}
+	$(CC) -o $@ $^ ${LFLAGS}
 
 regulate: regulate.o camera.o
-	$(CC) -o $@ $^ $(FFLAGS) ${LFLAGS}
+	$(CC) -o $@ $^ ${LFLAGS}
 
 status: status.o camera.o
-	$(CC) -o $@ $^ $(FFLAGS) ${LFLAGS}
+	$(CC) -o $@ $^ ${LFLAGS}
 
 setfilter: setfilter.o camera.o
-	$(CC) -o $@ $^ $(FFLAGS) ${LFLAGS}
+	$(CC) -o $@ $^ ${LFLAGS}
 
 usbcheck: usbcheck.o camera.o
-	$(CC) -o $@ $^ $(FFLAGS) ${LFLAGS}
+	$(CC) -o $@ $^ ${LFLAGS}
 
 clean:
 	rm -f *.o
